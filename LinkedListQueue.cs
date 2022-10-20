@@ -47,6 +47,18 @@ namespace DataStructureProgramStackAndQueue
                     temp = temp.next;
                 }
             }
-      
+        internal void Dequeu()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("Queue is empty");
+            }
+            else
+            {
+                Console.WriteLine("\nThe Deque element is : " + head.data);
+                head = head.next;
+
+            }
+        }
     }
 }
