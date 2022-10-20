@@ -28,10 +28,44 @@ namespace DataStructureProgramStackAndQueue
             head = newNode;
             Console.WriteLine("{0} pushed to stack", data);
         }
-        
-        public void Display()
+
+
+        internal void Peek()
         {
-            Console.WriteLine("Item in the stack");
+            if (head == null)
+            {
+                Console.WriteLine("Stack Underflow.");
+                return;
+            }
+
+            Console.WriteLine("{0} is on the top of Stack", this.head.data);
+        }
+
+
+        public void Pop()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("Stack Underflow. Deletion not possible");
+                return;
+            }
+
+            Console.WriteLine("Item popped is {0}", head.data);
+            head = head.next;
+        }
+
+        internal void IsEmpty()
+        {
+            while (this.head != null)
+            {
+                Peek();
+                Pop();
+            }
+        }
+
+            public void Display()
+        {
+            Console.WriteLine("\nItem in the stack");
             Node temp = this.head;
             if (temp == null)
             {
